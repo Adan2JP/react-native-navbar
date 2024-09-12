@@ -4,16 +4,16 @@ import {
   Text,
   View,
   Platform,
+  ViewPropTypes,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import ViewPropTypes from './lib';
 
 import NavbarButton from './NavbarButton';
 import styles from './styles';
 
 const ButtonShape = {
   title: PropTypes.string.isRequired,
-  style: View.propTypes.style,
+  style: ViewPropTypes.style,
   handler: PropTypes.func,
   disabled: PropTypes.bool,
 };
@@ -68,7 +68,7 @@ function getTitleElement(data) {
 
 export default class NavigationBar extends Component {
   static propTypes = {
-    style: View.propTypes.style,
+    style: ViewPropTypes.style,
     tintColor: PropTypes.string,
     statusBar: PropTypes.shape(StatusBarShape),
     leftButton: PropTypes.oneOfType([
@@ -86,7 +86,7 @@ export default class NavigationBar extends Component {
       PropTypes.element,
       PropTypes.oneOf([null]),
     ]),
-    containerStyle: View.propTypes.style,
+    containerStyle: ViewPropTypes.style,
   };
 
   static defaultProps = {
