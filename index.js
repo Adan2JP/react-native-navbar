@@ -13,7 +13,7 @@ import styles from './styles';
 
 const ButtonShape = {
   title: PropTypes.string.isRequired,
-  style: View.props.style,
+  style: View.propTypes.style,
   handler: PropTypes.func,
   disabled: PropTypes.bool,
 };
@@ -68,7 +68,7 @@ function getTitleElement(data) {
 
 export default class NavigationBar extends Component {
   static propTypes = {
-    style: View.props.style,
+    style: View.propTypes.style,
     tintColor: PropTypes.string,
     statusBar: PropTypes.shape(StatusBarShape),
     leftButton: PropTypes.oneOfType([
@@ -86,7 +86,7 @@ export default class NavigationBar extends Component {
       PropTypes.element,
       PropTypes.oneOf([null]),
     ]),
-    containerStyle: ViewPropTypes.style,
+    containerStyle: View.propTypes.style,
   };
 
   static defaultProps = {
